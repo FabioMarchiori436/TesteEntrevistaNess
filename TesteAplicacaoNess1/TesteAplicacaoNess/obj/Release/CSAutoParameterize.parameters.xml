@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="EntitiesUsuario-Web.config Connection String" description="EntitiesUsuario A Cadeia de Conexão usada em web.config pelo aplicativo para acessar o banco de dados." defaultValue="metadata=res://*/Models.Model1Usuario.csdl|res://*/Models.Model1Usuario.ssdl|res://*/Models.Model1Usuario.msl;provider=System.Data.SqlClient;provider connection string='data source=(LocalDB)\MSSQLLocalDB;attachdbfilename=&quot;C:\Users\Wind Beach\Documents\WINDBEACH-PC.Novo01.mdf&quot;;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework'" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Wind\ Beach\\TesteEntrevistaNess\\TesteAplicacaoNess\\TesteAplicacaoNess\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EntitiesUsuario']/@connectionString" />
+  </parameter>
+</parameters>

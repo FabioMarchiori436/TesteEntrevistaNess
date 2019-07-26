@@ -1,0 +1,37 @@
+﻿@model IEnumerable<TesteAplicacaoNess.Models.Usuario>
+@{
+    ViewBag.Title = "Fabio Marchiori - Teste Aplicado NESS";
+    var grid = new WebGrid(source: Model, canPage: true, defaultSort: "User_Id", rowsPerPage: 5, canSort: true);
+}
+<br />
+<p>
+    @Html.ActionLink("Novo Usuario", "AdicionarUsuario", null, new { @class = "btn btn-primary" })
+</p>
+@grid.GetHtml(
+tableStyle: "webGrid",
+htmlAttributes: new { id = "checkableGrid" },
+fillEmptyRows: true,
+alternatingRowStyle: "alt",
+headerStyle: "grid-header",
+footerStyle: "foot-grid",
+mode: WebGridPagerModes.All,
+firstText: "<< Primeiro",
+previousText: " < Anterior",
+nextText: "Próximo >",
+lastText: "Último >>",
+caption: "Detalhes do Usuário",
+emptyRowCellValue: null,
+columns: new[]{
+    grid.Column("ID",header:"ID",style:"text-align-left"),
+    grid.Column("Nome",header:"Nome"),
+    grid.Column("Cpf",header:"Cpf"),
+    grid.Column("Telefone",header:"Telefone"),
+    grid.Column("",header: "Ações",format: @<text>@Html.ActionLink("Editar", "AtualizaUsuario", new { id = item.Id })
+    |
+    @Html.ActionLink("Deletar", "DeletarUsuarioPorID", new { id = item.Id })
+    |
+    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id })
+    </text>
+        )
+                 }
+                )
